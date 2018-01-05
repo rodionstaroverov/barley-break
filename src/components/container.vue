@@ -15,7 +15,6 @@
         <plate v-text="13"></plate>
         <plate v-text="14"></plate>
         <plate v-text="15"></plate>
-        <plate v-text="null" :status="false"></plate>
     </div>
 </template>
 
@@ -33,9 +32,11 @@
     $background: #3F3F3F;
 
     .container {
+        position: relative;
         display: flex;
         width: 400px;
         height: 400px;
+        margin: 100px;
         flex-wrap: wrap;
         box-shadow: 0 0 25px rgba(0, 0, 0, .5);
         background-color: $background;

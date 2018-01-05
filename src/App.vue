@@ -1,16 +1,21 @@
 <template>
     <div id="app">
-       <container></container>
+        <toolbar></toolbar>
+
+        <container></container>
+
+        <toolbar></toolbar>
     </div>
 </template>
 
 <script>
     import Container from './components/container.vue'
+    import Toolbar from './components/toolbar.vue'
 
     export default {
         name: 'app',
 
-        components: { Container },
+        components: { Container, Toolbar },
 
         data() {
             return {
@@ -31,6 +36,7 @@
     #app {
         display: flex;
         flex: 1;
+        flex-direction: column;
         height: 100%;
         justify-content: center;
         align-items: center;
