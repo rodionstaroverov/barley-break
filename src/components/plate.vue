@@ -22,8 +22,11 @@
 </script>
 
 <style lang="scss">
-    $background: #81c784;
-    $background-hover: lighten(#81c784, 10%);
+    $background: #FF5644;
+    $background-hover: #3F3F3F;
+    $background-active: #595959;
+    $color: #595959;
+    $color-hover: #FF5644;
 
     .plate {
         display: flex;
@@ -34,19 +37,21 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        color: #fffafa;
+        color: $color;
         font-size: 22px;
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-family: 'Roboto', sans-serif;
         box-shadow: inset 0 0 1px rgba(0, 0, 0, 1);
         user-select: none;
 
         &:hover {
             background-color: $background-hover;
+            color: $color-hover;
             cursor: pointer;
+            box-shadow: none;
         }
 
         &:active {
-            background-color: darken($background-hover, 20%);
+            background-color: $background-active;
         }
 
         &__hidden {

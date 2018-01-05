@@ -29,14 +29,15 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    $background: #3F3F3F;
+
     .container {
         display: flex;
         width: 400px;
         height: 400px;
         flex-wrap: wrap;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
-        background-image: url('../assets/img/container.jpg');
-        background-size: 100%;
+        box-shadow: 0 0 25px rgba(0, 0, 0, .5);
+        background-color: $background;
     }
 </style>

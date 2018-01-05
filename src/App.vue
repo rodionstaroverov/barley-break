@@ -37,5 +37,6 @@
         background-image: url('assets/img/app.jpg');
         background-position: center bottom;
         background-attachment: fixed;
+        background-size: 100%;
     }
 </style>
