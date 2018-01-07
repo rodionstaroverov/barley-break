@@ -1,10 +1,6 @@
 <template>
     <div id="app">
-        <toolbar></toolbar>
-
         <container></container>
-
-        <toolbar></toolbar>
     </div>
 </template>
 

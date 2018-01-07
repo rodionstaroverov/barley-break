@@ -1,20 +1,9 @@
 <template>
     <div class="container">
-        <plate v-text="1"></plate>
-        <plate v-text="2"></plate>
-        <plate v-text="3"></plate>
-        <plate v-text="4"></plate>
-        <plate v-text="5"></plate>
-        <plate v-text="6"></plate>
-        <plate v-text="7"></plate>
-        <plate v-text="8"></plate>
-        <plate v-text="9"></plate>
-        <plate v-text="10"></plate>
-        <plate v-text="11"></plate>
-        <plate v-text="12"></plate>
-        <plate v-text="13"></plate>
-        <plate v-text="14"></plate>
-        <plate v-text="15"></plate>
+        <plate v-for="item in sortedArray"
+               v-text="item"
+               @move="move"
+               :class="{'plate__correct' : correctPlace }"/>
     </div>
 </template>
 
@@ -25,6 +14,34 @@
         name: 'container',
 
         components: { Plate },
+
+        data() {
+            return {
+                array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, null],
+                sortedArray: [],
+                correctPlace: false,
+            };
+        },
+
+        methods: {
+            move() {
+                console.log('move');
+            },
+
+            reset() {
+                this.sortedArray = this.array.sort(this.compareRandom);
+            },
+
+            compareRandom() {
+                return Math.random() - 0.5;
+            }
+        },
+
+        created() {
+            console.log(this.array);
+            this.reset();
+            console.log(this.sortedArray);
+        },
     }
 </script>
 

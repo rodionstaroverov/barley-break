@@ -1,22 +1,15 @@
 <template>
-    <div class="plate" :class="{'plate__hidden': !status }" @click="toggleStatus"></div>
+    <div class="plate" @click="move"></div>
 </template>
 
 <script>
     export default {
         name: "plate",
 
-        props: {
-            status: {
-                type: Boolean,
-                default: true,
-            }
-        },
-
         methods: {
-            toggleStatus() {
-                this.status = !this.status;
-            },
+            move() {
+                this.$emit('move');
+            }
         },
     }
 </script>
@@ -25,10 +18,11 @@
     $background: #FF5644;
     $background-hover: #3F3F3F;
     $background-active: #595959;
-    $color: #595959;
+    $color: #3F3F3F;
     $color-hover: #FF5644;
 
     .plate {
+        /*position: absolute;*/
         display: flex;
         width: 100px;
         height: 100px;
@@ -52,6 +46,16 @@
 
         &:active {
             background-color: $background-active;
+        }
+
+        &__correct {
+            background-color: yellowgreen;
+        }
+
+        &:empty { // __hidden
+            background-color: transparent;
+            color: transparent;
+            pointer-events: none;
         }
 
         &__hidden {
